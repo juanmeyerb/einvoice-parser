@@ -7,7 +7,7 @@ A Python pipeline that parses and validates electronic invoices from mixed forma
 Requires Python 3.12 and [Poetry](https://python-poetry.org/).
 
 ```bash
-git clone <this-repo>
+git clone https://github.com/juanmeyerb/einvoice-parser.git
 cd einvoice-parser
 poetry env use python3.12
 poetry install
@@ -16,6 +16,16 @@ poetry install
 This project is developed and tested against Python 3.12. Some dependencies, `lxml` in particular, may not yet have precompiled wheels for the newest Python releases, so 3.12 is recommended even if a newer version is installed system-wide.
 
 ## Usage
+
+### Command line
+
+```bash
+einvoice-parser path/to/invoice.csv          # single file, human-readable summary
+einvoice-parser path/to/invoice.pdf --json   # single file, full JSON output
+einvoice-parser path/to/invoices/            # a whole directory, batch mode
+```
+
+### Python API
 
 Parse a single file:
 
@@ -92,3 +102,7 @@ The plain-text PDF fallback is a heuristic, not a general solution. It has no OC
 ## Tech stack
 
 Python 3.12, pydantic v2 for validation and the common schema, lxml for XML parsing, pdfplumber for PDF text extraction, pypdf for reading PDF attachments, pytest for testing.
+
+## License
+
+MIT

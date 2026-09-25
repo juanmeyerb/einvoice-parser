@@ -1,0 +1,31 @@
+[project]
+name = "einvoice-parser"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "juanmeyer",email = "juan.meyer@stud.tu-darmstadt.de"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<3.15"
+dependencies = [
+    "pydantic (>=2.13.5,<3.0.0)",
+    "lxml (>=6.1.3,<7.0.0)",
+    "pdfplumber (>=0.11.10,<0.12.0)",
+    "pypdf (>=6.19.0,<7.0.0)"
+]
+
+[project.scripts]
+einvoice-parser = "einvoice_parser.__main__:main"
+
+[tool.poetry]
+packages = [{include = "einvoice_parser", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)",
+    "reportlab (>=5.0.1,<6.0.0)"
+]

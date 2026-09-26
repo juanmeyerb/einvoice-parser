@@ -1,0 +1,2 @@
+invoice_number,issue_date,due_date,currency,issuer_name,issuer_tax_id,issuer_country,recipient_name,net_amount,tax_amount,total_amount,line_description,line_quantity,line_unit_price,line_amount,line_tax_rate
+INV-2026-001,2026-09-01,2026-10-01,EUR,ACME GmbH,DE123456789,DE,Beta Corp,100.00,19.00,119.00,Consulting hours,2,50.00,100.00,19.00

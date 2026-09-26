@@ -1,5 +1,7 @@
 # E-Invoicing Parser
 
+[![Tests](https://github.com/juanmeyerb/einvoice-parser/actions/workflows/tests.yml/badge.svg)](https://github.com/juanmeyerb/einvoice-parser/actions/workflows/tests.yml)
+
 A Python pipeline that parses and validates electronic invoices from mixed formats (CSV, structured PDF, XML) into a single, validated data model. Built as a portfolio project to work through real e-invoicing standards (EN 16931, ZUGFeRD, XRechnung) and multi-format data extraction in Python with pydantic.
 
 ## Setup
@@ -20,9 +22,9 @@ This project is developed and tested against Python 3.12. Some dependencies, `lx
 ### Command line
 
 ```bash
-einvoice-parser path/to/invoice.csv          # single file, human-readable summary
-einvoice-parser path/to/invoice.pdf --json   # single file, full JSON output
-einvoice-parser path/to/invoices/            # a whole directory, batch mode
+einvoice-parser examples/invoice.csv               # single file, human-readable summary
+einvoice-parser examples/invoice_zugferd.pdf --json # single file, full JSON output
+einvoice-parser examples/                            # a whole directory, batch mode
 ```
 
 ### Python API
